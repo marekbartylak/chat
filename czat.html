@@ -1,11 +1,10 @@
-<html>
 <style type='text/css'>
 	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #005290;
+		background-color: #002C6C;
 		font-family: "Arial", sans-serif;
 	}
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #005290;
+		outline: 1px solid #002C6C;
 	}
 </style>
 
@@ -15,10 +14,10 @@
 		embedded_svc.settings.displayHelpButton = true; //Or false
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
 
-		//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Porozmawiaj z ekspertem)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+		embedded_svc.settings.defaultMinimizedText = 'Czat z konsultantem Gs1';
+		embedded_svc.settings.disabledMinimizedText = 'Konsultanci s� offline';
 
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+		embedded_svc.settings.loadingText = 'Wczytuj�';
 		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
 
 		// Settings for Chat
@@ -28,23 +27,23 @@
 		//};
 		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
 		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Skontaktuj si)
+		embedded_svc.settings.offlineSupportMinimizedText = 'Wy�lij zg�oszenie';
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 
 		embedded_svc.init(
-			'https://foundationgs1poland2--marchatsbx.sandbox.my.salesforce.com',
-			'https://foundationgs1poland2--marchatsbx.sandbox.my.site.com/',
+			'https://foundationgs1poland2.my.salesforce.com',
+			'https://foundationgs1poland2.my.site.com/',
 			gslbBaseURL,
-			'00D9M000000AX4L',
-			'Chat',
+			'00D09000002XueH',
+			'Gs1_chat',
 			{
-				baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-yzvdd4.salesforceliveagent.com/content',
-				deploymentId: '5729M000000270b',
-				buttonId: '5739M0000000VIL',
-				baseLiveAgentURL: 'https://d.la2s-core1.sfdc-yzvdd4.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I9M0000000PJNUA2_1874c388ca6',
+				baseLiveAgentContentURL: 'https://c.la1-core1.sfdc-yzvdd4.salesforceliveagent.com/content',
+				deploymentId: '5729W0000000034',
+				buttonId: '5739W000000002k',
+				baseLiveAgentURL: 'https://d.la1-core1.sfdc-yzvdd4.salesforceliveagent.com/chat',
+				eswLiveAgentDevName: 'Gs1_chat',
 				isOfflineSupportEnabled: true
 			}
 		);
@@ -52,7 +51,7 @@
 
 	if (!window.embedded_svc) {
 		var s = document.createElement('script');
-		s.setAttribute('src', 'https://foundationgs1poland2--marchatsbx.sandbox.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+		s.setAttribute('src', 'https://foundationgs1poland2.my.salesforce.com/embeddedservice/5.0/esw.min.js');
 		s.onload = function() {
 			initESW(null);
 		};
@@ -61,4 +60,3 @@
 		initESW('https://service.force.com');
 	}
 </script>
-</html>
